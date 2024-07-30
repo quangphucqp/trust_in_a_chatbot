@@ -1,0 +1,45 @@
+{{ block title }}
+    Practice Question - Recommendation
+{{ endblock }}
+
+{{ block content }}
+
+<style>
+    .otree-timer {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+    .info-card {
+        max-width: 1000px;
+        margin: auto;
+        background: #d9edf7;
+        border-color: #bce8f1;
+        padding: 20px;
+    }
+    .button-left {
+        text-align: left;
+        padding-top: 10px;
+    }
+</style>
+
+<!-- Info Card -->
+<div class="info-card card bg-light m-3">
+    {{ recommendation }}
+</div> <!-- End Info Card -->
+
+    <div class="button-left">
+        <button id="next-button" disabled>Next</button>
+    </div>
+
+        <script>
+        // Select the "Next" button
+        const nextButton = document.getElementById('next-button');
+
+        // Enable the "Next" button after a 3-minute delay
+        setTimeout(function() {
+            nextButton.disabled = false;
+        }, 180000); // 180000 milliseconds = 3 minutes
+    </script>
+
+{{ endblock }}

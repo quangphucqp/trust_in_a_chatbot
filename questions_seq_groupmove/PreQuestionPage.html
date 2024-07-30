@@ -1,0 +1,80 @@
+{% extends 'global/Page.html' %}
+{% load static %}
+
+{% block title %}
+    Question {{ player.round_number }} - Phase 1
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .otree-timer {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+    label {
+        display: none;
+    }
+    .answer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .answer input {
+        width: 70%;
+    }
+    .answer p {
+        width: 100%;
+        word-break: break-word;
+    }
+    .info-card {
+        max-width: 1000px;
+        margin: auto;
+        background: #d9edf7;
+        border-color: #bce8f1;
+        padding: 20px;
+    }
+        .button-left {
+        text-align: left;
+        padding-top: 10px;
+    }
+</style>
+<br>
+<p>To answer a question, you will state your belief about the likelihood of each option being the correct answer. To do so, you will allocate 100 points across the options A, B, C, and D to indicate your belief.</p>
+<p>For example, if you are absolutely certain that answer A is correct, you assign 100 points to A and 0 points to the other options. If you think answer A is not correct, you assign 0 points to A and distribute the 100 points among the other options based on your belief.</p>
+<br>
+<!-- Info Card -->
+<div class="info-card card bg-light m-3">
+    <p>{{ context }}</p>
+    <p><strong>{{ question }}</strong></p>
+
+    <div class="answer">
+        <p><strong>A:</strong> {{ answer_a }}</p>
+        {{ formfield player.pre_belief_a}}
+    </div>
+
+    <div class="answer">
+        <p><strong>B:</strong> {{ answer_b }}</p>
+        {{ formfield player.pre_belief_b }}
+    </div>
+
+    <div class="answer">
+        <p><strong>C:</strong> {{ answer_c }}</p>
+        {{ formfield player.pre_belief_c}}
+    </div>
+
+    <div class="answer">
+        <p><strong>D:</strong> {{ answer_d }}</p>
+        {{ formfield player.pre_belief_d}}
+    </div>
+
+    <div class="button-left">
+        <button id="next-button" disabled>Submit Answer</button>
+    </div>
+</div> <!-- End Info Card -->
+
+<script src="{% static 'global/button_delay_short.js' %}"></script>
+
+{% endblock %}

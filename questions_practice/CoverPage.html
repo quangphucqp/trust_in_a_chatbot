@@ -1,0 +1,26 @@
+{% extends 'global/Page.html' %}
+{% load static %}
+
+{% block title %}
+    <!-- Page Title -->
+    Practice Round
+{% endblock %}
+
+{% block content %}
+    <!-- Information Card -->
+    <div class="card bg-light m-3">
+        <div class="card-body">
+            <p>Let's begin with a practice round.</p>
+            <p>In this round, you will solve a question and experience three different phases involved in answering a question. This will give you a feel of what to expect in the actual study.</p>
+            <p>Please note that this is just a practice round and its outcome will not influence your reward at the end of the study.</p>
+            <p>When you're ready, click the "Continue" button below to start the practice round.</p>
+        </div>
+    </div>
+
+    <!-- Continue Button -->
+    <button id="next-button" class="btn btn-primary" disabled>Continue</button>
+
+    <!-- Script for Enabling the Button -->
+    <script src="{% static 'global/button_delay_short.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'global/Page.html' %}
+{% load static %}
+
+{% block title %}
+    <!-- Page Title -->
+    Consent
+{% endblock %}
+
+{% block content %}
+    <p>Before we begin, please provide your consent to continue. Otherwise, you are free to leave if you decide not to participate in this research.</p>
+
+    <!-- Consent Card -->
+    <div class="card bg-light m-3">
+        <div class="card-body">
+            <p>I hereby agree to participate in this study, which has been approved by the Institutional Review Board (IRB) of the Tilburg School of Economics and Management (number IRB {{irb_number}}).</p>
+            <p>I understand that participation is voluntary. I understand that I can refuse to participate, and that I can withdraw from taking part in this research after it has started, without providing any explanation.</p>
+            <p>I am aware that I will be solving a number of logical reasoning questions in this experiment. I understand that all my interactions on the experimental platform and app will be recorded for research purposes. The recorded data will be used solely for analysis and to inform the study findings. I understand that the study will take approximately 60 minutes to complete.</p>
+            <p>I understand that I will receive a participation payment of {{participation_fee}} euros and an additional reward of up to
+            {{maximum_additional_reward}} euros depending on my responses, paid in cash at the end of the experiment. I will be fully informed about the payment mechanism.</p>
+            <p>I understand that all data, including any recorded interactions, will be anonymized and stored following standard procedures. The anonymized data will be stored for at least 10 years. See also <a href="https://www.tilburguniversity.edu/privacy" target="_blank">www.tilburguniversity.edu/privacy</a>.</p>
+        </div>
+    </div>
+
+    <p>If you have any remarks regarding this research, you can contact Phuc Phung via <a href="mailto:q.p.phung@uvt.nl">q.p.phung@uvt.nl</a> or the Institutional Review Board of Tilburg School of Economics and Management via <a href="mailto:irb-tisem@uvt.nl">irb-tisem@uvt.nl</a>.</p>
+
+    <!-- Consent Form Field -->
+    <strong>{% formfield player.consent label="" %}</strong>
+    <!-- Next Button -->
+    {% next_button %}
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'global/Page.html' %}
+{% load static %}
+
+{% block title %}
+    Practice Question - Phase 2
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .otree-timer {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+    .info-card {
+        max-width: 1000px;
+        margin: auto;
+        background: #d9edf7;
+        border-color: #bce8f1;
+        padding: 20px;
+    }
+    .button-left {
+        text-align: left;
+        padding-top: 10px;
+    }
+</style>
+
+<!-- Info Card -->
+<div class="info-card card bg-light m-3">
+
+    <p>Please now move to the computer next to you, one number higher, to see the recommendation for this question.</p>
+    <p>Once you are done, please return to this computer.</p>
+    <p>The app will automatically move to the next phase after the countdown is over.</p>
+
+</div> <!-- End Info Card -->
+
+
+{% endblock %}

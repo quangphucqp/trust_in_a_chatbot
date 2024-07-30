@@ -1,0 +1,23 @@
+{% extends 'global/Page.html' %}
+{% load static %}
+
+{% block title %}
+    <!-- Page Title -->
+    Main Experiment
+{% endblock %}
+
+{% block content %}
+    <!-- Information Card -->
+    <div class="card bg-light m-3">
+        <div class="card-body">
+            <p>We now commence the main experiment.<p>
+            <p>You will be tasked with solving {{number_of_rounds}} questions.</p>
+            <p>Ensure to answer each question to the best of your abilities.</p>
+            <p>Good luck and thank you for your participation.</p>
+        </div>
+    </div>
+
+    <!-- Continue Button -->
+    <button id="next-button" class="btn btn-primary">Continue</button>
+
+{% endblock %}

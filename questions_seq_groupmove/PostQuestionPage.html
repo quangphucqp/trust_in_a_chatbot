@@ -1,0 +1,79 @@
+{% extends 'global/Page.html' %}
+{% load static %}
+
+{% block title %}
+    Question {{ player.round_number }} - Phase 3
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .otree-timer {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+    label {
+        display: none;
+    }
+    .answer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .answer input {
+        width: 70%;
+    }
+    .answer p {
+        width: 100%;
+        word-break: break-word;
+    }
+    .info-card {
+        max-width: 1000px;
+        margin: auto;
+        background: #d9edf7;
+        border-color: #bce8f1;
+        padding: 20px;
+    }
+        .button-left {
+        text-align: left;
+        padding-top: 10px;
+    }
+</style>
+<br>
+<p>You can now state your belief about the correct answer again by allocating 100 points across the options. This belief submission is counted separately from the one in phase 1. Hence, for each question, you submit your answer twice, once in phase 1, and another in phase 3. The answer in phase 1 and 3 are counted separately.</p>
+<br>
+<!-- Info Card -->
+<div class="info-card card bg-light m-3">
+    <p>{{ context }}</p>
+    <p><strong>{{ question }}</strong></p>
+
+    <div class="answer">
+        <p><strong>A:</strong> {{ answer_a }}</p>
+        {{ formfield player.post_belief_a}}
+    </div>
+
+    <div class="answer">
+        <p><strong>B:</strong> {{ answer_b }}</p>
+        {{ formfield player.post_belief_b }}
+    </div>
+
+    <div class="answer">
+        <p><strong>C:</strong> {{ answer_c }}</p>
+        {{ formfield player.post_belief_c}}
+    </div>
+
+    <div class="answer">
+        <p><strong>D:</strong> {{ answer_d }}</p>
+        {{ formfield player.post_belief_d}}
+    </div>
+
+    <div class="button-left">
+        <button id="next-button" disabled>Submit Answer</button>
+    </div>
+</div> <!-- End Info Card -->
+
+<script src="{% static 'global/button_delay_short.js' %}"></script>
+
+{% endblock %}

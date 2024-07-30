@@ -1,0 +1,33 @@
+{% extends 'global/Page.html' %}
+{% load static %}
+
+{% block title %}
+    Question {{ player.round_number }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .content-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 150px;
+    }
+</style>
+
+<div class="content-block">
+    <div>
+        <br>
+        Click on the button to reveal the question.
+        <br>
+    </div>
+
+    <div>
+        <button id="next-button" disabled>Next</button>
+    </div>
+</div>
+
+<script src="{% static 'global/button_delay_short.js' %}"></script>
+
+{% endblock %}

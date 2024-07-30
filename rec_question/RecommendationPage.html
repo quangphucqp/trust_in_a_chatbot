@@ -1,0 +1,77 @@
+{% extends 'global/Page.html' %}
+{% load static %}
+
+{% block title %}
+    Question {{ player.round_number }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .otree-timer {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+    .answer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .answer input {
+        width: 70%;
+    }
+    .answer p {
+        margin-right: 10px;
+        word-break: break-word;
+    }
+    .info-card {
+        max-width: 1000px;
+        margin: auto;
+        background: #d9edf7;
+        border-color: #bce8f1;
+        padding: 20px;
+    }
+    .button-left {
+        text-align: left;
+        padding-top: 10px;
+    }
+</style>
+
+<!-- Info Card -->
+<div class="info-card card bg-light m-3">
+    <p>{{ context }}</p>
+    <p><strong>{{ question }}</strong></p>
+
+    <div class="answer">
+        <p><strong>A:</strong> {{ answer_a }}</p>
+    </div>
+
+    <div class="answer">
+        <p><strong>B:</strong> {{ answer_b }}</p>
+    </div>
+
+    <div class="answer">
+        <p><strong>C:</strong> {{ answer_c }}</p>
+    </div>
+
+    <div class="answer">
+        <p><strong>D:</strong> {{ answer_d }}</p>
+    </div>
+</div> <!-- End Info Card -->
+
+    <div class="button-left">
+        <button id="next-button" disabled>Next</button>
+    </div>
+
+    <script>
+        // Select the "Next" button
+        const nextButton = document.getElementById('next-button');
+
+        // Enable the "Next" button after a 3-minute delay
+        setTimeout(function() {
+            nextButton.disabled = false;
+        }, 180000); // 180000 milliseconds = 3 minutes
+    </script>
+
+{% endblock %}

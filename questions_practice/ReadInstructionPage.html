@@ -1,0 +1,27 @@
+{% extends 'global/Page.html' %}
+{% load static %}
+
+{% block title %}
+    <!-- Page Title -->
+    Instructions
+{% endblock %}
+
+{% block content %}
+    <!-- Instruction Card -->
+    <div class="card bg-light m-3">
+        <div class="card-body">
+            <p>Thank you for your consent!<p>
+            <p>Please find the instructions for this experiment on your table.</p>
+            <p>Read the instructions carefully. If you have any questions, please raise your hand and an experimenter will assist you.</p>
+            <p>Once you have finished reading the instructions, click the "Continue" button below.</p>
+            <p><strong>The experiment will begin once everyone is ready.</strong></p>
+        </div>
+    </div>
+
+    <!-- Continue Button -->
+    <button id="next-button" class="btn btn-primary" disabled>Continue</button>
+
+    <!-- Script for Enabling the Button -->
+    <script src="{% static 'global/button_delay_long.js' %}"></script>
+
+{% endblock %}

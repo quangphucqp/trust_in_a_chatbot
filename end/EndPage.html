@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load static %}
+{% load otree %}
+
+{% block content %}
+    <h2>Participation Ended</h2>
+    <br>
+    <p>Thank you for your participation in our study. Details regarding the reward lottery can be found below. Please note down the total amount on the payment form and proceed to queue up for the experimenter to process your payment.</p>
+    <br>
+<!-- Information Card -->
+<div class="card bg-light m-3">
+    <div class="card-body">
+        <h3>Phase 1:</h3>
+        <p>The question selected randomly was question {{ pre_round }}</p>
+        <p>The correct answer for this question is: {{ pre_correct_answer }}</p>
+        <p>In phase 1, your belief allocated on this answer option was: {{ pre_belief }}</p>
+        <p>The random number drawn in phase 1 is: {{ pre_random_number }}</p>
+        <p>The reward in phase 1 is: {{ pre_reward }} euros.</p>
+
+        <h3>Phase 3:</h3>
+        <p>The question selected randomly was question number: {{ post_round }}</p>
+        <p>The correct answer for this question is: {{ post_correct_answer }}</p>
+        <p>In phase 3, your belief allocated on this answer option was: {{ post_belief }}</p>
+        <p>The random number drawn in phase 3 is: {{ post_random_number }}</p>
+        <p>The reward in phase 3 is: {{ post_reward }} euros.</p>
+
+        <h3>Total Reward:</h3>
+        <p>Your final reward is {{ total_reward }} euros.</p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'global/Page.html' %}
+{% load static %}
+
+{% block title %}
+    <!-- Page Title -->
+    End of Questioning Phase
+{% endblock %}
+
+{% block content %}
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Row -->
+        <div class="row">
+            <!-- Main Column -->
+            <div class="col">
+
+                <!-- Information Card -->
+                <div class="card bg-light m-3">
+                    <div class="card-body">
+                        <p>Congratulations! You have completed all the questions in this experiment.</p>
+                        <p>Press the button to continue.</p>
+                    </div>
+                </div>
+
+                <!-- Continue Button -->
+                <div class="d-flex justify-content-center">
+                    {% next_button %}
+                </div>
+            </div>
+            <!-- End of Main Column -->
+        </div>
+        <!-- End of Main Row -->
+    </div>
+    <!-- End of Main Container -->
+{% endblock %}
